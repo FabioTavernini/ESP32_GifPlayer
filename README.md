@@ -2,6 +2,9 @@
 
 Play Gifs from SD card on a ST7735 display with an esp32 microcontroller
 
+
+################### NOT FINISHED YET ###################
+
 ## Wiring:
 
 ### [SD-Card holder:](https://de.aliexpress.com/item/1005006005013220.html?spm=a2g0o.order_list.order_list_main.26.21ef5c5fhjewSS&gatewayAdapt=glo2deu)
@@ -16,7 +19,6 @@ Play Gifs from SD card on a ST7735 display with an esp32 microcontroller
 | SCK   | D18      |
 | MISO  | D19      |
 | GND   | GND      |
-
 
 ### [TFT Display:](https://de.aliexpress.com/item/1005003797803015.html?spm=a2g0o.order_list.order_list_main.75.21ef5c5fhjewSS&gatewayAdapt=glo2deu)
 
