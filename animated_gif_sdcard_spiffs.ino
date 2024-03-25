@@ -2,18 +2,22 @@
 #include <SPI.h>
 #include <FS.h>
 #include <SPIFFS.h>
-#include <TFT_eSPI.h> // Install this library with the Arduino Library Manager
-                      // Don't forget to configure the driver for the display!
+#include <TFT_eSPI.h>      // Install this library with the Arduino Library Manager
+                           // Don't forget to configure the driver for the display!
 
-#include <AnimatedGIF.h> // Install this library with the Arduino Library Manager
+#include <AnimatedGIF.h>   // Install this library with the Arduino Library Manager
 
 #define SD_CS_PIN 5 // Chip Select Pin (CS) for SD card Reader
 
 AnimatedGIF gif;
-File gifFile; // Global File object for the GIF file
-TFT_eSPI tft = TFT_eSPI();
+File gifFile;              // Global File object for the GIF file
+TFT_eSPI tft = TFT_eSPI(); 
 
-const char *filename = "/spin.gif"; // Change to load other gif files in images/GIF
+
+const char *filename = "/spin.gif";   // Change to load other gif files in images/GIF
+
+
+
 
 void setup()
 {
@@ -21,6 +25,12 @@ void setup()
   tft.begin();
   tft.setRotation(3); // Adjust Rotation of your screen (0-3)
   tft.fillScreen(TFT_BLACK);
+
+  tft.setCursor(80, 80);
+
+  tft.print("Hello again <3");
+
+  delay(10000);
 
   // Initialize SD card
   Serial.println("SD card initialization...");
@@ -86,6 +96,7 @@ void loop()
     tft.startWrite(); // The TFT chip slect is locked low
     while (gif.playFrame(true, NULL))
     {
+
     }
     gif.close();
     tft.endWrite(); // Release TFT chip select for the SD Card Reader
